@@ -1,0 +1,14 @@
+from django.shortcuts import render
+from .models  import Student
+from django.shortcuts import HttpResponse
+
+def insert_student(request):
+    student = Student(
+        roll_number=1,
+        name='kartik',
+        dept='cs',
+        email='abc@gmail.com',
+        phone='1234567891'
+    )
+    student.save()
+    return HttpResponse("student inserted successfully")

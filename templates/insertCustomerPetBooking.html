@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    body{
+       background: url('https://img.freepik.com/premium-photo/flat-lay-composition-with-stationery-note-need-your-help-color-background-space-text_495423-53652.jpg');
+       background-size: cover;
+    }
+    .login-form{
+        width: 350px;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        color: black;
+    }
+    .login-form h1{
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 40px 0;
+    }
+    .login-form p{
+        font-size: 20px;
+        margin: 15px, 0;
+    }
+    .login-form input{
+        font-size: 16px;
+        width: 100%;
+        padding: 10px 10px;
+        border: 0;
+        outline: none;
+        border-radius: 5px;
+    }
+    .login-form button{
+        font-size: 18px;
+        font-weight: bold;
+        margin: 20px, 0;
+        padding: 10px 15px;
+        width: 50%;
+        border-radius: 5px;
+        border: 0;
+    }
+</style>
+<body>
+{% include 'Customer_menu.html' %}
+<div class="login-form">
+    <h1>Insert Customer Pet Booking</h1>
+    <form  method="POST">
+        {% csrf_token %}
+        <p>customer_id</p>
+        <input type="number" name="t1" placeholder="customer_id">
+        <p>customer_name</p>
+        <input type="text" name="t2" placeholder="customer_name">
+        <p>pet_id</p>
+        <input type="number" name="t3" placeholder="pet_id">
+        <p>owner_id</p>
+        <input type="number" name="t4" placeholder="owner_id">
+        <p>number_of_puppies</p>
+        <input type="number" name="t5" placeholder="number_of_puppies">
+        <p>date</p>
+        <input type="datetime-local" name="t6" placeholder="date">
+        <p>states</p>
+        <input type="text" name="t7" placeholder="states">
+        <br><br>
+        <button id="index"  type="submit">Save</button>
+    </form>
+</div>
+</body>
+</html>

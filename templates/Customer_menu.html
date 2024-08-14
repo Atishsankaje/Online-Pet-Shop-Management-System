@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link to Button</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .button {
+        display: inline-block;
+        padding: 10px 14px;
+        font-size: 14px;
+        color: black;
+        background-color: #007BFF;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 15px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+<div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="{% url 'insertCustomerOrderDetails' %}" class="button">insertCustomerOrderDetails</a>
+                        <a href="{% url 'OwnerDetails_views_C' %}" class="button">OwnerDetails_views</a>
+                        <a href="{% url 'insertCustomerPetBooking' %}" class="button">insertCustomerPetBooking</a>
+                        <a href="{% url 'CustomerPetDetails_views_C' %}" class="button">CustomerPetDetails_views</a>
+                        <a href="{% url 'CustomerProductDetails_views_C' %}" class="button">CustomerProductDetails_views</a>
+                        <a href="{% url 'changepass' %}" class="button">changepass</a>
+                        <a href="{% url 'login' %}" class="button">logout</a>
+                    </div>
+</div>
+</body>
+</html>

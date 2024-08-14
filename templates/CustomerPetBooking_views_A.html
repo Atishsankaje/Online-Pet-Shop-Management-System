@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    body{
+       background: url('https://img.freepik.com/premium-photo/flat-lay-composition-with-stationery-note-need-your-help-color-background-space-text_495423-53652.jpg');
+       background-size: cover;
+    }
+    .login-form{
+        width: 350px;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        color: black;
+    }
+    .login-form h1{
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 40px 0;
+    }
+</style>
+<body>
+{% include 'Admin_menu.html' %}
+<div class="login-form">
+    <h1>Customer Pet Booking</h1>
+    <table border="5" width="665" height="15" style="margin-left:-200px;">
+        <tr style="background-color:blue;color:white;text-align:center">
+            <td height="36"><strong>customer_id</strong></td>
+            <td><strong>customer_name</strong></td>
+            <td><strong>pet_id</strong></td>
+            <td><strong>owner_id</strong></td>
+            <td><strong>number_of_puppies</strong></td>
+            <td><strong>date</strong></td>
+            <td><strong>states</strong></td>
+<!--            <td colspan="2" bgcolor="#FF0000"><div align="center"><strong>Actions</strong></div></td>-->
+        </tr>
+        {% for i in UserDict %}
+        <tr>
+            <td>{{i.customer_id}}</td>
+            <td>{{i.customer_name}}</td>
+            <td>{{i.pet_id}}</td>
+            <td>{{i.owner_id}}</td>
+            <td>{{i.number_of_puppies}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.states}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+</body>
+</html>

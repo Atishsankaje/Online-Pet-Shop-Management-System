@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    body{
+       background: url("https://www.versele-laga.com/-/media/VerseleLaga-Tenant/Global-Site/Articles/Dogs/Header/shutterstock_1123406810.ashx?h=1080&w=1920&la=en&hash=01B5EE8749A4FF33F92537C8B4888A1E");
+       background-size: cover;
+    }
+    .login-form{
+        width: 350px;
+        top: 40%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        color: black;
+    }
+    .login-form h1{
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 40px 0;
+    }
+    .login-form p{
+        font-size: 20px;
+        margin: 15px, 0;
+    }
+    .login-form input{
+        font-size: 16px;
+        width: 100%;
+        padding: 15px 10px;
+        border: 0;
+        outline: none;
+        border-radius: 5px;
+    }
+    .login-form button{
+        font-size: 18px;
+        font-weight: bold;
+        margin: 20px, 0;
+        padding: 10px 15px;
+        width: 25%;
+        border-radius: 20px;
+        border: 0;
+    }
+    button:hover{
+        background-color: black;
+        color: #fff;
+    }
+    .header_section{
+	    background-color: black;
+	    padding: 10px 15px;
+	    text-align: center;
+    }
+    .contact_link1{
+        padding-right: 450px;
+        color: white;
+    }
+    .contact_link2{
+        padding-right: 500px;
+    }
+    .contact_link3{
+        padding-right: 0px;
+        color: white;
+    }
+    .contact_link-container input{
+        display: inline-block;
+        padding: 10px 25px;
+        font-size: 14px;
+        color: white;
+        background-color: green;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 15px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+    }
+    .login-form h5{
+        color: red;
+        font-weight: bold;
+        font-size: 15px;
+        text-transform: uppercase;
+        background-color: white;
+    }
+    .signup{
+        position: relative;
+        border: 5px solid white;
+        border-radius: 6px;
+        width: 100%;
+        height: 50%;
+        transform: translateX(1%);
+        margin-top: 10px;
+        background-color: white;
+    }
+    .signup a{
+        text-decoration: none;
+        margin-right: 5px;
+        color: blue;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .signup p{
+        text-align: center;
+        width: 350px;
+        height: 30px;
+        color: black;
+    }
+</style>
+<body>
+<header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_link-container">
+            <a href="" class="contact_link1">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                All Passion, All Pets
+              </span>
+            </a>
+            <a href="" class="contact_link2">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                <input type="button" value="Call : +91 7892617452">
+              </span>
+            </a>
+            <a href="" class="contact_link3">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                petshop@gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+</header>
+<div class="login-form">
+    <h1>Login Form</h1>
+    <h5>{{msg}}</h5><br>
+    <form  method="POST">
+        {% csrf_token %}
+        <p>user_name or email</p>
+        <input type="text" name="t1" placeholder="Username or email" value="{{email}}">
+        <p>password</p>
+        <input type="password" name="t2" placeholder="Password"><br><br>
+        <button type="submit" id="submit">Login</button>
+        <button type="submit">Cancel</button>
+    </form>
+</div>
+</body>
+</html>
